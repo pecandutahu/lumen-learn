@@ -19,6 +19,7 @@ $router->get('/todolists','TodolistController@index');
 $router->get('/todolists/{id}','TodolistController@detail');
 $router->post('/todolists/store','TodolistController@store');
 $router->post('/todolists/update/{id}','TodolistController@update');
+$router->post('/todolists/changestatus/','TodolistController@changestatus');
 $router->get('/todolists/destroy/{id}','TodolistController@destroy');
 $router->post('/user/register','UserController@register');
 $router->get('/user','UserController@index');

@@ -75,6 +75,18 @@ class TodolistController extends Controller
         return $this->handleResponse(200,'success',$data);
     }
 
+    public function changestatus(Request $request){
+        $Todolist = Todolist::find($request->id);
+        $Todolist->status = $request->status; 
+        $Todolist->save();
+
+        $data = [
+            'todolist' => $Todolist
+        ];
+
+        return $this->handleResponse(200,'success',$data);
+    }
+
     public function destroy($id){
         $Todolist = Todolist::find($id);
         $data = [
