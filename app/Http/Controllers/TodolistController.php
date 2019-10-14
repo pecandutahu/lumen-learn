@@ -18,7 +18,11 @@ class TodolistController extends Controller
     }
 
     public function handleResponse($status, $message, $data){
-        return response()->json([$status, $message, $data]);
+        return response()->json([
+            'status' => $status, 
+            'message' => $message, 
+            'data' => $data
+        ],$status);
     }
 
     public function index(){
