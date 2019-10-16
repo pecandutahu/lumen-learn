@@ -33,10 +33,10 @@ class TodolistController extends Controller
         return $this->handleResponse(200,'success',$data);
     }
 
-    public function detail($id){
-        $Todolists = Todolist::find($id);
+    public function detail(Request $request){
+        $Todolists = Todolist::find($request->id);
         $data = [
-            'todolists' => $Todolists
+            'todolist' => $Todolists
         ];
         if($Todolists)
             return $this->handleResponse(200,'success',$data);
@@ -87,8 +87,8 @@ class TodolistController extends Controller
         return $this->handleResponse(200,'success',$data);
     }
 
-    public function destroy($id){
-        $Todolist = Todolist::find($id);
+    public function destroy(Request $request){
+        $Todolist = Todolist::find($request->id);
         $data = [
             'todolist' => $Todolist
         ];

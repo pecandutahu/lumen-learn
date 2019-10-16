@@ -18,9 +18,9 @@ $router->get('/', function () use ($router) {
 $router->get('/todolists','TodolistController@index');
 $router->get('/todolists/{id}','TodolistController@detail');
 $router->post('/todolists/store','TodolistController@store');
-$router->post('/todolists/update/{id}','TodolistController@update');
-$router->post('/todolists/changestatus/','TodolistController@changestatus');
-$router->get('/todolists/destroy/{id}','TodolistController@destroy');
+$router->post('/todolists/update','TodolistController@update');
+$router->post('/todolists/changestatus','TodolistController@changestatus');
+$router->post('/todolists/destroy','TodolistController@destroy');
 $router->post('/user/register','UserController@register');
 $router->get('/user','UserController@index');
 $router->get('/user/{id}','UserController@detail');
